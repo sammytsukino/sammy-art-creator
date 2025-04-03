@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sammy Art Creator</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <header>
+        <h1>SAMMYCABELLO artcreator</h1>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="ascii">ASCII Art</button>
+        <button class="tab-button" data-tab="pixelizer">Pixelizer</button>
+        <button class="tab-button" data-tab="mosaic">Mosaic</button>
+    </div>
+
+    <div id="ascii" class="tab-content active">
+        <div class="controls">
+            <div>
+                <label for="asciiFileInput">Upload Image:</label>
+                <input type="file" id="asciiFileInput" name="picture" />
+            </div>
+            <div>
+                <label for="brightnessAscii">Brightness:</label>
+                <input type="range" id="brightnessAscii" min="-100" max="100" value="0">
+            </div>
+            <div>
+                <label for="contrastAscii">Contrast:</label>
+                <input type="range" id="contrastAscii" min="-100" max="100" value="0">
+            </div>
+            <div>
+                <label for="densitySlider">Density:</label>
+                <input type="range" id="densitySlider" min="1" max="100" value="100">
+            </div>
+            <div>
+                <label for="invertColors">Invert Colors:</label>
+                <input type="checkbox" id="invertColors">
+            </div>
+            <div class="char-segments">
+                <label>Custom Characters:</label>
+                <div>
+                    <label for="charDark">Dark:</label>
+                    <textarea id="charDark" placeholder="$@B%#"></textarea>
+                </div>
+                <div>
+                    <label for="charMedium">Medium:</label>
+                    <textarea id="charMedium" placeholder="oahkbdpqwmZO0QLCJUYXzcvunxrjft"></textarea>
+                </div>
+                <div>
+                    <label for="charBright">Bright:</label>
+                    <textarea id="charBright" placeholder="/|()1{}[]?-_+~<>i!lI;:,\"^`\'. "></textarea>
+                </div>
+            </div>
+            <button id="saveAsciiImageBtn" disabled>Save as Image</button>
+            <button id="downloadAsciiTextBtn" disabled>Download as Text</button>
+            <button id="shareAsciiBtn" disabled>Share</button>
+        </div>
+        <canvas id="asciiPreview" style="display: none;"></canvas>
+        <pre id="asciiOutput"></pre>
+    </div>
+
+    <div id="pixelizer" class="tab-content">
+        <div class="controls">
+            <div>
+                <label for="pixelFileInput">Upload Image:</label>
+                <input type="file" id="pixelFileInput" name="picture" />
+            </div>
+            <div>
+                <label for="brightnessPixel">Brightness:</label>
+                <input type="range" id="brightnessPixel" min="-100" max="100" value="0">
+            </div>
+            <div>
+                <label for="contrastPixel">Contrast:</label>
+                <input type="range" id="contrastPixel" min="-100" max="100" value="0">
+            </div>
+            <div>
+                <label for="pixelSizeSlider">Pixel Size:</label>
+                <input type="range" id="pixelSizeSlider" min="1" max="50" value="1">
+            </div>
+            <div>
+                <label for="pixelPalette">Color Palette:</label>
+                <select id="pixelPalette">
+                    <option value="default">Default</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="sepia">Sepia</option>
+                </select>
+            </div>
+            <div>
+                <label for="pixelMode">Pixel Mode:</label>
+                <select id="pixelMode">
+                    <option value="solid">Solid Color</option>
+                    <option value="gradient_up">Gradient Up</option>
+                </select>
+            </div>
+            <button id="savePixelImageBtn" disabled>Save Pixelated Image</button>
+            <button id="sharePixelBtn" disabled>Share</button>
+        </div>
+        <canvas id="pixelPreview"></canvas>
+    </div>
+
+    <div id="mosaic" class="tab-content">
+        <div class="controls">
+            <div>
+                <label for="mosaicFileInput">Upload Image:</label>
+                <input type="file" id="mosaicFileInput" name="picture" />
+            </div>
+            <div>
+                <label for="mosaicTileSlider">Tile Size:</label>
+                <input type="range" id="mosaicTileSlider" min="5" max="100" value="50">
+            </div>
+            <button id="saveMosaicImageBtn" disabled>Save Mosaic Image</button>
+            <button id="shareMosaicBtn" disabled>Share</button>
+        </div>
+        <canvas id="mosaicPreview"></canvas>
+    </div>
+
+    <footer>
+    </footer>
+    <script src="./src/index.js"></script>
+</body>
+</html>

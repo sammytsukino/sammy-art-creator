@@ -1,0 +1,120 @@
+body {
+    font-family: 'VT323', monospace;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-button.active {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 5px 5px 5px;
+    background-color: #fff;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controls > div {
+    display: flex;
+    align-items: center;
+}
+
+.controls label {
+    margin-right: 10px;
+    width: 120px;
+    text-align: right;
+}
+
+.controls input[type="range"],
+.controls input[type="color"],
+.controls input[type="checkbox"],
+.controls textarea,
+.controls button,
+input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.char-segments {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.char-segments > label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    width: auto;
+}
+
+.char-segments > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.char-segments > div > label {
+    width: 60px;
+}
+
+#asciiOutput {
+    white-space: pre-wrap !important;
+    font-family: monospace !important;
+    line-height: 1em;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+#pixelPreview {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
